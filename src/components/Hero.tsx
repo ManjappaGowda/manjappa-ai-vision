@@ -90,6 +90,22 @@ const Hero = () => {
             </div>
           </div>
 
+          {/* Right Content - Profile Image */}
+          <div className="relative animate-slide-up">
+            <div className="relative">
+              <div className="w-80 h-80 mx-auto lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+                <img 
+                  src="/lovable-uploads/7afc5de4-da7a-4d1b-ab38-7a1813e41720.png" 
+                  alt="Manjappa Gowda GR - AI/ML Engineering Student"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Decorative elements around the image */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-tech-accent rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
