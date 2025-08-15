@@ -1,42 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Modern Portfolio Design System - Dark Theme with Red Accents */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark Theme Base Colors */
+    --background: 220 13% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 13% 10%;
+    --card-foreground: 0 0% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 13% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Red Accent */
+    --primary: 0 72% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 0 72% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary Dark Grays */
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 0 0% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 13% 12%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 72% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 20%;
+    --input: 220 13% 15%;
+    --ring: 0 72% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Portfolio Colors */
+    --hero-gradient-start: 220 13% 8%;
+    --hero-gradient-end: 220 13% 12%;
+    --section-bg: 220 13% 10%;
+    --tech-accent: 195 100% 50%;
+    --success: 142 76% 36%;
+    
+    /* Shadows and Effects */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 10px 30px -5px hsl(220 13% 5% / 0.5);
+    --shadow-tech: 0 0 20px hsl(var(--tech-accent) / 0.4);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +116,107 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter scroll-smooth;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter font-semibold;
+  }
+
+  .font-mono {
+    @apply font-jetbrains;
+  }
+}
+
+@layer components {
+  /* Hero Section Gradients */
+  .hero-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--hero-gradient-start)) 0%, 
+      hsl(var(--hero-gradient-end)) 100%);
+  }
+
+  .tech-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--primary)) 0%, 
+      hsl(var(--tech-accent)) 100%);
+  }
+
+  /* Glow Effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-tech {
+    box-shadow: var(--shadow-tech);
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  /* Geometric Decorations */
+  .geometric-circle {
+    @apply absolute rounded-full opacity-20;
+    background: linear-gradient(135deg, 
+      hsl(var(--primary)) 0%, 
+      hsl(var(--tech-accent)) 100%);
+  }
+
+  /* Skill Cards */
+  .skill-card {
+    @apply bg-card border border-border rounded-lg p-4 transition-all duration-300;
+    @apply hover:border-primary hover:shadow-lg hover:scale-105;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Project Cards */
+  .project-card {
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300;
+    @apply hover:border-primary hover:shadow-xl hover:-translate-y-2;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply relative text-muted-foreground hover:text-primary transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Contact Form */
+  .contact-input {
+    @apply bg-input border border-border rounded-lg px-4 py-3 text-foreground;
+    @apply focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
 }
