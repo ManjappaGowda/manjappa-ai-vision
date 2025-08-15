@@ -1,4 +1,4 @@
-import { Code, Brain, Database, Cloud, Shield, Smartphone } from 'lucide-react';
+import { Code, Brain, Database, Smartphone } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
@@ -19,18 +19,6 @@ const Skills = () => {
       icon: Database,
       skills: ["Django", "Flutter", "Firebase", "TensorFlow", "PyTorch"],
       color: "text-success"
-    },
-    {
-      title: "Cloud & Infrastructure",
-      icon: Cloud,
-      skills: ["Cloud Computing", "Edge Computing", "Networking", "Docker"],
-      color: "text-primary"
-    },
-    {
-      title: "Security & Privacy",
-      icon: Shield,
-      skills: ["Cryptography", "Cybersecurity", "Privacy Protection", "Blockchain"],
-      color: "text-destructive"
     },
     {
       title: "Mobile & Web",
