@@ -90,39 +90,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Profile Area */}
-          <div className="relative animate-slide-up">
-            <div className="bg-card border border-border rounded-2xl p-8 space-y-6">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-semibold">Based in Shimoga, Karnataka</h3>
-                <p className="text-lg text-muted-foreground">
-                  I'm developer and UI/UX designer.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <p className="text-muted-foreground">
-                  Hey are looking for developer to build your brand and grow your business? 
-                  let's shake hands with me.
-                </p>
-                
-                <div className="border-t border-border pt-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Languages</span>
-                    <span className="text-sm">English, Kannada, Hindi, Japanese</span>
-                  </div>
-                </div>
-              </div>
-
-              <Button 
-                onClick={() => scrollToSection('contact')}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-              >
-                Let's Chat
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
