@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Eye, Brain, Shield, Zap, Car } from 'lucide-react';
+import { ExternalLink, Github, Eye, Brain, Shield, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Projects = () => {
@@ -43,32 +43,6 @@ const Projects = () => {
       ]
     },
     {
-      title: "SafeSphere AI",
-      description: "Women's safety application developed for SHE Secure 2025 Hackathon, featuring AI-powered threat detection and emergency response.",
-      technologies: ["AI", "Mobile App", "Flutter", "Firebase", "Safety Tech"],
-      icon: Shield,
-      category: "Safety Tech",
-      features: [
-        "AI-powered threat detection",
-        "Emergency contact system",
-        "Real-time location sharing",
-        "Community safety network"
-      ]
-    },
-    {
-      title: "Real-time Bengaluru Traffic App",
-      description: "Intelligent traffic management system providing real-time traffic updates and route optimization for Bengaluru city.",
-      technologies: ["Real-time Data", "Mobile App", "APIs", "Machine Learning", "Flutter"],
-      icon: Car,
-      category: "Smart City",
-      features: [
-        "Real-time traffic monitoring",
-        "Route optimization algorithms",
-        "Predictive traffic analysis",
-        "User-friendly mobile interface"
-      ]
-    },
-    {
       title: "AI Research Companion",
       description: "FOSS Hack 2025 project featuring offline search capabilities and YouTube content summarization for researchers.",
       technologies: ["NLP", "AI", "Offline Processing", "YouTube API", "Research Tools"],
@@ -88,8 +62,6 @@ const Projects = () => {
       "AI/ML": "text-primary",
       "AI/IoT": "text-tech-accent",
       "Security": "text-destructive",
-      "Safety Tech": "text-success",
-      "Smart City": "text-primary",
       "Research": "text-tech-accent"
     };
     return colors[category as keyof typeof colors] || "text-primary";
