@@ -94,9 +94,6 @@ const Hero = () => {
           <div className="relative animate-slide-up">
             <div className="bg-card border border-border rounded-2xl p-8 space-y-6">
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <span className="text-sm text-primary font-mono">Expert on</span>
-                </div>
                 <h3 className="text-2xl font-semibold">Based in Shimoga, Karnataka</h3>
                 <p className="text-lg text-muted-foreground">
                   I'm developer and UI/UX designer.
